@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
 
-},{timestamps: true}
+},{timestamps: true}//to know the timestamp of user's entered data
 );
 
 
