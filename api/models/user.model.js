@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    profilePicture: {
+        type: String,
+        default: "https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/",
+    }
 
 },{timestamps: true}//to know the timestamp of user's entered data
 );
