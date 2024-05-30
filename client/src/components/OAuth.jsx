@@ -10,14 +10,16 @@ import { signInSuccess } from '../redux/user/userSlice.js'
 
 export default function OAuth() {
 
+    
+    const auth = getAuth(app);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleGoogleClick = async() => {
+
       const provider = new GoogleAuthProvider();
       provider.setCustomParameters({prompt: 'select_account'})
 
-      const auth = getAuth(app);
 
       try{
         const resultsFromGoogle = await signInWithPopup(auth, provider);
@@ -27,7 +29,7 @@ export default function OAuth() {
           body: JSON.stringify({
             name: resultsFromGoogle.user.displayName,
             email: resultsFromGoogle.user.email,
-            googlePhotoURL: resultsFromGoogle.user.photoURL,
+            googlePhotoUrl: resultsFromGoogle.user.photoURL,
           }),
         })
 
@@ -40,6 +42,8 @@ export default function OAuth() {
       }catch(error){
         console.log(error);
       }
+
+      
     }
 
   return (
