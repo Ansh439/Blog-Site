@@ -1,10 +1,12 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit'
 import userReducer from './user/userSlice'
+import themeReducer from './theme/themeSlice'
 import {persistReducer, persistStore} from 'redux-persist' //redux persist to store info in local storage so that signin info will be kept even after refreshing
 import storage from 'redux-persist/lib/storage'
 
 const rootReducer = combineReducers({
     user: userReducer,
+    theme: themeReducer,
 })
 
 const persistConfig = {
