@@ -1,0 +1,20 @@
+[33mfc4b41c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: commit: Dark Mode feayire added
+[33m09f75fe[m HEAD@{1}: commit: Added functionalities to header component
+[33md5fca2c[m HEAD@{2}: commit: Added OAuth functionality
+[33me49c7fb[m HEAD@{3}: commit: added redux persist
+[33m2397cdc[m HEAD@{4}: commit: setup redux toolkit
+[33m3a8b528[m HEAD@{5}: commit: added Signin page UI and functionality
+[33md8e712a[m HEAD@{6}: commit: setup Signin API route
+[33me444a9f[m HEAD@{7}: commit: Created the Footer Component
+[33md36380d[m HEAD@{8}: commit: Added functionalities and error handling in Sign Up Page
+[33mf661c34[m HEAD@{9}: commit: Created a Sign-up Page UI
+[33mcd666d6[m HEAD@{10}: commit: added a middleware and errorHandler
+[33me31cfb4[m HEAD@{11}: commit: Signup Route created
+[33m11d16fc[m HEAD@{12}: commit: created a test api router
+[33md0ad94e[m HEAD@{13}: commit: Created User Model
+[33md98ecea[m HEAD@{14}: commit: connected to the database
+[33m56c28ae[m HEAD@{15}: commit: created and run the server
+[33m8fc5419[m HEAD@{16}: commit: Created Header Section
+[33mc6b1b6e[m HEAD@{17}: commit: Pages created & Route Setup
+[33m64149df[m HEAD@{18}: Branch: renamed refs/heads/main to refs/heads/main
+[33m64149df[m HEAD@{20}: commit (initial): installed React.js/Tailwind-CSS & empty template
