@@ -60,6 +60,7 @@ export default function DashProfile() {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
           setImageFileUrl(downloadUrl)
         })
+        setImageUploadProgess(null)
       }
     )
   }
