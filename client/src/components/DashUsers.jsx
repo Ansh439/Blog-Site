@@ -36,7 +36,7 @@ export default function DashUsers() {
       const res = await fetch(`/api/user/getusers?startIndex=${startIndex}`);
       const data = await res.json();
       if(res.ok){
-        setUserPosts((prev) => [...prev, ...data.users]);
+        setUsers((prev) => [...prev, ...data.users]);
         if(data.users.length < 9){
           setShowMore(false);
         }
@@ -46,29 +46,27 @@ export default function DashUsers() {
     }
   }
 
-//   const handleDeleteUser = async () => {
-//     setShowModal(false);
-//     try {
-//       const res = await fetch(`/api/user/deleteuser/${userIdToDelete}/${currentUser._id}`,{
-//         method: 'DELETE',
-//       });
+  const handleDeleteUser = async () => {
+    setShowModal(false);
+    try {
+      const res = await fetch(`/api/user/delete/${userIdToDelete}`,{
+        method: 'DELETE',
+      });
 
-//       const data = await res.json();
-//       if(!res.ok){
-//         console.log(data.message)
-//       }else{
-//         setUserPosts((prev) => 
-//           prev.filter((post) => post._id !== postIdToDelete)
-//         );
-//       }
-//     } catch (error) {
-//       console.log(error.message);
-//     }
-//   }
-
-    const handleDeleteUser = async () => {
-
+      const data = await res.json();
+      if(!res.ok){
+        console.log(data.message)
+      }else{
+        setUsers((prev) => 
+          prev.filter((user) => user._id !== userIdToDelete)
+        );
+        setShowModal(false);
+      }
+    } catch (error) {
+      console.log(error.message);
     }
+  }
+
 
   return (
     <div className='overflow-x-scroll table-auto md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
