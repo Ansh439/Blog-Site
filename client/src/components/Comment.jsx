@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { FaThumbsUp } from 'react-icons/fa'
 import { useSelector } from 'react-redux';
 
-export default function Comment({comment, onLike, onEdit}) {
+export default function Comment({comment, onLike, onEdit, onDelete}) {
     const [user, setUser] = useState({});
     const [isEditting, setIsEditting] = useState(false);
     const [edittedContent, setEdittedContent] = useState(comment.content);
@@ -102,14 +102,24 @@ export default function Comment({comment, onLike, onEdit}) {
                             </p>
                             {
                                 currentUser && (currentUser._id === comment.userId || currentUser.isAdmin) && (
-                                    <button
-                                        type='button'
-                                        onClick={handleEdit}
-                                        className=' text-gray-400 hover:text-blue-500'
-                                        
-                                    >
-                                        Edit
-                                    </button>
+                                    <>
+                                        <button
+                                            type='button'
+                                            onClick={handleEdit}
+                                            className=' text-gray-400 hover:text-blue-500'
+                                            
+                                        >
+                                            Edit
+                                        </button>
+                                        <button
+                                            type='button'
+                                            onClick={() => onDelete(comment._id)}
+                                            className=' text-gray-400 hover:text-red-500'
+                                            
+                                        >
+                                            Delete
+                                        </button>
+                                    </>
                                 )
                             }
                         </div>
@@ -119,5 +129,6 @@ export default function Comment({comment, onLike, onEdit}) {
             
         </div>
     </div>
+     
   )
 }
