@@ -11,7 +11,6 @@ export default function Header() {
     const dispatch = useDispatch();
     const {theme} = useSelector(state => state.theme);
     const {currentUser} = useSelector(state => state.user);
-    console.log(currentUser);
     const path = useLocation().pathname;
 
     const handleSignout = async(req, res, next) => {

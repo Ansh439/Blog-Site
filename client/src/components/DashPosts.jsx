@@ -10,7 +10,7 @@ export default function DashPosts() {
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState('');
   const {currentUser} =  useSelector(state => state.user);
-  console.log(userPosts);
+  
   useEffect(() => {
     const fetchPosts = async() => {
       try {
@@ -83,7 +83,7 @@ export default function DashPosts() {
               </Table.Head>
               {
                 userPosts.map((post) => (
-                  <Table.Body className='divide-y' key={currentUser._id}>
+                  <Table.Body className='divide-y' key={post._id}>
                     <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
                       <Table.Cell>{new Date(post.updatedAt).toLocaleDateString()}</Table.Cell>
 
