@@ -126,6 +126,6 @@ export const getComments = async (req, res, next) => {
 
         res.status(200).json({comments, totalComments, commentsLastMonth});
     } catch (error) {
-        
+        next(error)
     }
 }
